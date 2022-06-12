@@ -1,9 +1,22 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import Card from "../components/Card";
+import Header from "../components/Header";
 import styles from "../styles/Home.module.css";
 
-const Home: NextPage = () => {
+interface ISlip {
+  id: number;
+  advice: string;
+}
+
+export async function getStaticProps() {
+  const data = await fetch("https://api.adviceslip.com/advice");
+  const { slip } = await data.json();
+  return {
+    props: slip,
+  };
+}
+
+export default function Home(slip: ISlip) {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,11 +30,16 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <div className={styles.card}>
-          <Card header={"Advice"} text={"Text advice here"} />
+          <Card
+            text={slip.advice}
+            header={
+              <div className={styles.header}>
+                <Header headerText={"A D V I C E "} idText={slip.id} />
+              </div>
+            }
+          />
         </div>
       </main>
     </div>
   );
-};
-
-export default Home;
+}
