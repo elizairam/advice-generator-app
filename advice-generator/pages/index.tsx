@@ -4,7 +4,7 @@ import Card from "../components/Card";
 import Header from "../components/Header";
 import styles from "../styles/Home.module.css";
 import Icon from "../components/Icon";
-import { useRouter } from "next/router";
+import { useState } from "react";
 
 interface ISlip {
   id: number;
@@ -22,7 +22,25 @@ export async function getStaticProps() {
 }
 
 export default function Home(slip: ISlip) {
-  const router = useRouter();
+  const API_GENERATE_NEW_ADVICE = `https://api.adviceslip.com/advice/${
+    Math.floor(Math.random() * 224) + 1
+  }`;
+  const [slipData, setSlipData] = useState<ISlip>({
+    id: slip.id,
+    advice: slip.advice,
+  });
+  const [pressNewAdvice, setPressNewAdvice] = useState<boolean>(false);
+
+  const getNewAdvice = async () => {
+    const data = await fetch(API_GENERATE_NEW_ADVICE);
+    const { slip } = await data.json();
+    setSlipData(slip);
+  };
+
+  const changeHandlerAdvice = () => {
+    setPressNewAdvice(!pressNewAdvice);
+    getNewAdvice();
+  };
 
   return (
     <div className={styles.container}>
@@ -38,23 +56,23 @@ export default function Home(slip: ISlip) {
       <main className={styles.main}>
         <div className={styles.card}>
           <Card
-            text={slip.advice}
+            text={slipData.advice}
             header={
               <div className={styles.header}>
-                <Header headerText={"A D V I C E "} idText={slip.id} />
+                <Header headerText={"A D V I C E "} idText={slipData.id} />
               </div>
             }
           />
         </div>
         <div className={styles.icon}>
           <Icon
-            click={() => router.reload()}
+            click={changeHandlerAdvice}
             icon={
               <Image
                 src={"/icon-dice.svg"}
                 alt="icon dice"
-                width={24}
-                height={24}
+                width={22}
+                height={22}
               />
             }
           />
