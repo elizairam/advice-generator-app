@@ -27,7 +27,7 @@ User should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://advice-generator-app-project.vercel.app/)
+- Solution URL: [advice generator app project](https://advice-generator-app-project.vercel.app/)
 
 ### Built with
 
