@@ -23,7 +23,7 @@ User should be able to:
 
 ### Screenshot
 
-![screenshot](./advice-generator/public/screenshot.PNG)
+![screenshot](./public/screenshot.png)
 
 ### Links
 
