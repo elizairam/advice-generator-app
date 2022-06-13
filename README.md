@@ -8,9 +8,6 @@
   - [Links](#links)
 - [Built with](#built-with)
   - [Built with](#built-with)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
 
 ## Overview
 
@@ -26,7 +23,7 @@ User should be able to:
 
 ### Screenshot
 
-![screenshot](./public/screenshot.PNG)
+![screenshot](./advice-generator/public/screenshot.PNG)
 
 ### Links
 
