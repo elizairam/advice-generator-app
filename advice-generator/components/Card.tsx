@@ -14,7 +14,7 @@ export default function Card(props: ICard) {
         {props.text}
         {' " '}
       </p>
-      <hr />
+      <p>{"________ | | ________"}</p>
     </>
   );
 }
