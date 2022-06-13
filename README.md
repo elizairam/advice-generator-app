@@ -27,16 +27,17 @@ User should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Add solution URL here](https://advice-generator-app-project.vercel.app/)
 
 ### Built with
 
 - HTML5
 - CSS
 - Mobile-first workflow
-- [TypeScript] (https://www.typescriptlang.org/) 
+- [TypeScript](https://www.typescriptlang.org/) 
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
+- [Vercel](https://vercel.com) - Deploy
 
 -------------------------------------------------------------------
 
