@@ -60,6 +60,14 @@ export default function Home(slip: ISlip) {
                 <Header headerText={"A D V I C E "} idText={slipData.id} />
               </div>
             }
+            patternDivider= {
+              <Image
+              src={"/pattern-divider-desktop.svg"}
+              alt="divider"
+              width={444}
+              height={16}
+            />
+            }
           />
         </div>
         <div className={styles.icon}>

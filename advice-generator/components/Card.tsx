@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 interface ICard {
   header: ReactNode;
   text: string;
+  patternDivider: ReactNode;
 }
 
 export default function Card(props: ICard) {
@@ -14,7 +15,7 @@ export default function Card(props: ICard) {
         {props.text}
         {' " '}
       </p>
-      <p>{"________ | | ________"}</p>
+      <p>{props.patternDivider}</p>
     </>
   );
 }
