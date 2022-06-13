@@ -29,7 +29,6 @@ export default function Home(slip: ISlip) {
     id: slip.id,
     advice: slip.advice,
   });
-  const [pressNewAdvice, setPressNewAdvice] = useState<boolean>(false);
 
   const getNewAdvice = async () => {
     const data = await fetch(API_GENERATE_NEW_ADVICE);
@@ -37,8 +36,7 @@ export default function Home(slip: ISlip) {
     setSlipData(slip);
   };
 
-  const changeHandlerAdvice = () => {
-    setPressNewAdvice(!pressNewAdvice);
+  const changeAdvice = () => {
     getNewAdvice();
   };
 
@@ -66,7 +64,7 @@ export default function Home(slip: ISlip) {
         </div>
         <div className={styles.icon}>
           <Icon
-            click={changeHandlerAdvice}
+            click={changeAdvice}
             icon={
               <Image
                 src={"/icon-dice.svg"}
