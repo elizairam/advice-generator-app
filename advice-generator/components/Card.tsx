@@ -9,8 +9,12 @@ export default function Card(props: ICard) {
   return (
     <>
       <div>{props.header}</div>
-      <p>{' \" '}{props.text}{' \" '}</p>
-      <hr/>  
+      <p>
+        {' " '}
+        {props.text}
+        {' " '}
+      </p>
+      <hr />
     </>
   );
 }
