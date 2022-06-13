@@ -17,11 +17,11 @@
   transition: 0.3s;
   background-color: var(--grayish-blue);
   border-radius: 10px;
-  width: 350px;
-  height: 250px;
+  width: 500px;
+  height: 300px;
   text-align: center;
-  font-size: 20px;
-  padding: 2%;
+  font-size: 22px;
+  padding: 40px;
 }
 
 .card:hover {
@@ -43,15 +43,12 @@
   border-radius: 50%;
 }
 
-@media (max-width: 375px) {
-  .main {
-    flex-direction: column;
-  }
-
+@media (max-width: 500px) {
   .card {
-    width: fit-content;
-    height: 125px;
-    font-size: 10px;
+    width: 300px;
+    height: 290px;
+    font-size: 20px;
+    padding: 20px;
   }
 
   .header {
